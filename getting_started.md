@@ -21,7 +21,7 @@ Note that some useful software are in `/home/binsec-ase/programs`, namely the so
 
 Note that vscode is installed is the VM if you wish to use it, use can simply run `code .` then.
 
-See the `README.md` file for further documentation.
+See the [step-by-step](./step_by_step.md) guide for further documentation.
 
 ## Docker installation
 
@@ -38,11 +38,11 @@ cd /home/binsec-ase/artefact
 
 Note that some useful software are in `/home/binsec-ase/programs`, namely the solvers bitwuzla and boolector (z3 is also installed), the dissasembler cutter (radare2 is also installed).
 
-See the `README.md` file for further documentation.
+See the [step-by-step](./step_by_step.md) guide for further documentation.
 
 # Paper
 
-You will find a copy of the accepted paper in the artefact, named `draft.pdf`. The camera-ready will be uploaded when available.
+You will find a copy of the accepted paper in the artefact, named [draft.pdf](./draft.pdf). The camera-ready will be uploaded when available.
 
 
 # Running your first BINSEC/ASE analysis
@@ -79,4 +79,4 @@ Note that some benchmarks can be quite long to run. If you wish to set a time li
 timeout 3600 time binsec -config verifyPIN_0_forking.cfg
 ```
 
-See the `output.md` documentation for further information about a BINSEC/ASE output, and `configuration.md` for details about the configuration file and how to play with it to change the attacker model and the analysis options. 
+See the [output.md](./docs/output.md) documentation for further information about a BINSEC/ASE output, and [configuration.md](./docs/configuration.md) for details about the configuration file and how to play with it to change the attacker model and the analysis options. 
