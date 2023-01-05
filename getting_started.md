@@ -29,8 +29,9 @@ See the [step-by-step](./step_by_step.md) guide for further documentation.
 
 Download the [BINSEC/ASE docker](https://github.com/binsec/esop2023_artefact/download/1.0/esop2023-artefact.tar.gz).
 
-Launch the docker with:
+Decompress and load the docker with the `load` command and launch it with:
 ```
+docker load -i esop2023_artefact.tar.gz
 docker run -it --rm esop2023_artefact
 ```
 Note that if you are using vscode, you can bind it to the docker.
