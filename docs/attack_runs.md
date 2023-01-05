@@ -61,7 +61,7 @@ timeout 600 binsec -config 7.5_1bitflip.cfg
 cd /home/binsec-ase/artefact/benchmarks/dullien_linked/
 binsec -config 7.5_1bitflip.cfg 
 ```
-Here is a shorter version stopping at the first attack found (under 5 s).
+Here is a shorter version stopping at the first attack found (under 1s).
 ```
 binsec -config 7.5_1bitflip_stopFirst.cfg
 ```

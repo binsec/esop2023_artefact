@@ -9,7 +9,7 @@ Python scripts are in the `multirun-script` folder. The main script is `mutlirun
 
 It will output the logs produced by BINSEC/ASE and a csv file summing up essential metrics.
 
-***WARNING*** multirun.py is to be launched form the `multirun-script` folder for correct paths.
+***WARNING*** multirun.py is to be launched from the `multirun-script` folder for correct paths.
 ```
 cd /home/binsec-ase/artefact/multirun-script
 ```
