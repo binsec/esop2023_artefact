@@ -18,7 +18,7 @@ To run the RSA with a single reset fault:
 cd /home/binsec-ase/artefact/benchmarks/CRT-RSA_aumuller/
 binsec -config 7.5_1reset.cfg 
 ```
-For a partial and faster run, you can add a 1 second timeout on the solving time per query, and a total timeout at 1 hour.
+For a partial and faster run, you can add a 1 second timeout on the solving time per query, and a total timeout at 1 hour, however as there should not be any attack found the result will not say much.
 ```
 timeout 3600 binsec -config 7.5_1reset_TOsolver.cfg 
 ```
@@ -46,23 +46,25 @@ binsec -config 7.5_1reset_stopFirst.cfg
 ## Secret keeping machine
 
 The scripts to replay 1 bit-flip on the two version of the secret keeping machine:
-- the `dullien_array` implementation
+- the `dullien_array` implementation.
 ```
 cd /home/binsec-ase/artefact/benchmarks/dullien_array/
 binsec -config 7.5_1bitflip.cfg 
 ```
-\\ How long ? (IP) too long -> make faster version
+Unfortunately is quite long to run, and as the goal is to prove tha absence of attacks from injection in the memory, an exhaustive run is necessary. We encourage to set a global timeout (10min for instance) with the following command.
+```
+timeout 600 binsec -config 7.5_1bitflip.cfg 
+```
 
 - the `dullien_linked` implementation, which takes a long time to run.
 ```
 cd /home/binsec-ase/artefact/benchmarks/dullien_linked/
 binsec -config 7.5_1bitflip.cfg 
 ```
-Here is a shorter version stopping at the first attack found (\\ TODO s).
+Here is a shorter version stopping at the first attack found (under 5 s).
 ```
 binsec -config 7.5_1bitflip_stopFirst.cfg
 ```
-\\ TODO crash
 
 
 ## Secswift protection
@@ -114,10 +116,18 @@ binsec -config 8_section1_fast.cfg
 
 In the paper, two other attacks are explored.
 
-The first one, `WooKey_ISO` can be reproduced with the following command. It takes around \\ TODO to run.
+The first one, `WooKey_ISO` can be reproduced with the following command. It takes around quite some time to run.
 ```
 cd /home/binsec-ase/artefact/benchmarks/WooKey_ISO/
 binsec -config 8_attack.cfg
+``` 
+A version stopping at the first attack path found will still take more than 1h without finding the attack.
+```
+binsec -config 8_attack_stopFirst.cfg
+``` 
+To have a shorter run (10min):
+```
+timeout 600 binsec -config 8_attack_stopFirst.cfg
 ``` 
 
 The second attack, `WooKey_TI` can be reproduced with the following command. It takes under 30s to run.

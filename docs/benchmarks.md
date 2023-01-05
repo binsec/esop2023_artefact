@@ -1,7 +1,7 @@
 Benchmarks
 ===
 
-All benchmarks are in `benchmraks`
+All benchmarks are in `benchmarks`
 ```
 cd /home/binsec-ase/artefact/benchmarks
 ```
@@ -24,8 +24,6 @@ We applied the secswfit protection to `VerifyPIN_0` and call it `VerifyPIN_0_ss`
 
 You may see some warnings appear during the analysis, they do not compromise the attack path found. 
 
-**Warning** this benchmark is quite long to run (~35 min for 1 ArbitraryData branchless fault ).
-
 ## RSAs
 
 We have 3 versions of RSA with various protections, taken from FISSC [[1]](#bibliography).
@@ -34,18 +32,18 @@ The first, `CRT-RSA_basic`, version is vulnerable to a reset.
 The second version, `CRT-RSA_shamir`, implements the protections from Shamir's work, and is also vulnerable to one reset fault.
 The last version, `CRT-RSA_aumuller`, implements Aumuller protection ans is said to be resistant to one reset fault.
 
-**Warning** those benchmarks can be very long to run. The basic version less so.
+**Warning** those benchmarks are long to run.
 
 ## Dullien's secret keeping machine
 
 We have the linked-list and the array implementations of the secret keeping machine program [[3]](#bibliography), called `dullien_array` and `dullien_linked`. Those require the activation of `fault-vars-in-adresses` option. The `dullien_array` version is resistant to one arbitrary data fault in memory (note that our analysis will find attack paths, all faulting 'register' values). The second version, `dullien_linked` is vulnerable to one arbitrary data fault.
 
-**Warning** Those benchmarks are long to run (~1h for branchless 1 fault).
+**Warning** Those benchmarks are long to run.
 
 
 # WooKey case study (section 8)
 
-The orginal WooKey code, as stubbed in Lacombe's work [[4]](#bibliography) is called `WooKey_original`. It is vulnerable to 1 arbitrary data fault, which has equivalent effects in attack paths found than test inversions, which are much faster to run.
+The orginal WooKey code, as stubbed from Lacombe's work [[4]](#bibliography) is called `WooKey_original`. It is vulnerable to 1 arbitrary data fault, which has equivalent effects in attack paths found than test inversions, which are much faster to run.
 
 The second version is the patch proposed by Lacombe et al, called `WooKey_Lacombe`. Where there remain one attack path for an arbitrary data fault.
 

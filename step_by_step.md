@@ -27,7 +27,3 @@ All the commands are the same for VM and docker.
 - SMT solvers: bitwuzla (native binding and external), z3 and boolector.
 - dissassemblers: radare2 and cutter.
 
-# TODO
-
-
-\\ TODO major issues with dullien linked
