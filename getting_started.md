@@ -7,6 +7,8 @@ This artefact is available as a Docker or VM for VirtualBox.
 
 ## VM installation
 
+Download the [BINSEC/ASE VM](https://github.com/binsec/esop2023_artefact/download/1.0/esop2023-artefact.ova).
+
 Import the `BINSEC-ASE` VM in VirtualBox. Start it.
 The user is `binsec-ase`, and the password `binsec-ase` though it should login automatically.
 
@@ -25,7 +27,9 @@ See the [step-by-step](./step_by_step.md) guide for further documentation.
 
 ## Docker installation
 
-Download the docker image, and launch it with
+Download the [BINSEC/ASE docker](https://github.com/binsec/esop2023_artefact/download/1.0/esop2023-artefact.tar.gz).
+
+Launch the docker with:
 ```
 docker run -it --rm esop2023_artefact
 ```
