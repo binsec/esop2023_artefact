@@ -80,6 +80,3 @@ timeout 3600 time binsec -config verifyPIN_0_forking.cfg
 ```
 
 See the `output.md` documentation for further information about a BINSEC/ASE output, and `configuration.md` for details about the configuration file and how to play with it to change the attacker model and the analysis options. 
-
-
-# License
