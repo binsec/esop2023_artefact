@@ -2,7 +2,7 @@ BINSEC/ASE: Adversarial Reachability
 for Program-level Security Analysis
 ===
 
-This is a companion repository made available to support experimental claims of the paper "Adversarial Reachability for Program-level Security Analysis" ([preprint](./draft.pdf)).
+This is a companion repository made available to support experimental claims of the paper "Adversarial Reachability for Program-level Security Analysis" ([read the paper](./2023_esop.pdf)).
 
 # Artefact evaluation
 

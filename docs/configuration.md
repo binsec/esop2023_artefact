@@ -8,7 +8,7 @@ Note that configuration lines can be in any order provided they are in the right
 
 
 # Kernel options
-The following section tells BINSEC/ASE which `isa` the executable has been built for. Here we focus on Intel x86 architecture for convenience. 
+The following section tells BINSEC/ASE which `isa` the executable has been built for. 
 The `entrypoint` defines where the symbolic engine should start running, usually the main function. It can be the symbol of another function for a per-function analysis.
 Finally, `file` is the name of the executable to analyze.
 ```
@@ -17,6 +17,23 @@ isa = x86
 entrypoint = main
 file = verifyPIN_0.x
 ```
+
+## Specify architecture
+For Intel x86 architecture, add in this section:
+```
+isa = x86
+```
+
+For an ARM 32bit architecture, add in this section:
+```
+isa = arm32
+```
+And add an extra section:
+```
+[arm]
+supported-modes = thumb
+```
+
 
 # Symbolic execution options
 The next section defines the symbolic engine options.
@@ -102,7 +119,11 @@ To prevent faulting some dba variables, the following option is used.
 ```
 target-blacklist = esp
 ```
-In practice, we use it to prevent faults to the `esp` register as it does not represent a supported fault model in the sense that it is a true challenge for the solver. In some programs, the `gs` register is also used to refer to memory regions within which data is fetched, we recommend blacklisting it too to avoid attack paths setting uninitialized memory exactly right. 
+In practice for an Intel x86, we use it to prevent faults to the `esp` register as it does not represent a supported fault model in the sense that it is a true challenge for the solver. In some programs, the `gs` register is also used to refer to memory regions within which data is fetched, we recommend blacklisting it too to avoid attack paths setting uninitialized memory exactly right. 
+For an ARM architecture, we recommend black-listing the following registers.
+```
+target-blacklist = fp,lr
+```
 
 By default, faults on addresses are not performed, as we do not have an efficient algorithm for them. If you which to activate faults on addresses anyway, add the following option.
 ```
